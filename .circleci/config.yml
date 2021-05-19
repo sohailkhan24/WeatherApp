@@ -1,24 +1,25 @@
-version: 2
-jobs:
-  build:
-    docker:
-      - image: node:12.18.4
+cache:
+  paths:
+    - node_modules/
 
-    working_directory: ~/repo
+stages:
+  - init
+  - deploy_prod
 
-    steps:
-      - checkout
+init:
+  stage: init
+  image: node:12.16.1
+  script:
+    - npm install
 
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-
-      - run: npm install
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+deploy_production:
+  image: node:12.16.1
+  stage: deploy_prod
+  script:
+    - git push https://$HEROKU_USER:$HEROKU_API_KEY@git.heroku.com/weather-web-app-reactjs.git HEAD:master
+    - echo "Deployed to production server"
+  environment:
+    name: production
+    url: https://weather-web-app-reactjs.herokuapp.com/
+  only:
+    - master
