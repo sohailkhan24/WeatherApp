@@ -40,7 +40,7 @@ jobs:
       - run:
           name: Deploy Master to Heroku
           command: |
-            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/weather-web-app-reactjs.git master
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/weatherapp-circleci.git master
           auth:
-          username: sohailkhan2709@gmail.com
+          username: sohailkhan4764@gmail.com
           password: zcbm12342@A # context / project UI env-var reference
