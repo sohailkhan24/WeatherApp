@@ -1,25 +1,32 @@
-cache:
-  paths:
-    - node_modules/
+version: 2.1
 
-stages:
-  - init
-  - deploy_prod
+orbs:
+  heroku: circleci/heroku@0.0.10
 
-init:
-  stage: init
-  image: node:12.16.1
-  script:
-    - npm install
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10.16.3
+    working_directory: ~/repo
+    steps:
+      - checkout
+      # install dependencies
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - run:
+          name: Run tests
+          command: npm run test
 
-deploy_production:
-  image: node:12.16.1
-  stage: deploy_prod
-  script:
-    - git push https://$HEROKU_USER:$HEROKU_API_KEY@git.heroku.com/weather-web-app-reactjs.git HEAD:master
-    - echo "Deployed to production server"
-  environment:
-    name: production
-    url: https://weather-web-app-reactjs.herokuapp.com/
-  only:
-    - master
+workflows:
+  heroku_deploy:
+    jobs:
+      - build
+      - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
+          requires:
+            - build
+          filters:
+            branches:
+              only: main
+
+
