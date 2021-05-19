@@ -35,7 +35,9 @@ function App() {
       <Header />
       <Container>
         <h1 className="m-3 text-light">Welcome !</h1>
-        <Button onClick={getData}>Get Weather</Button>
+        <Button className="m-3 ms-4 bg-info text-dark" onClick={getData}>
+          Get Weather
+        </Button>
         <Content data={weatherData} />
       </Container>
     </div>
