@@ -35,7 +35,7 @@ jobs:
       - image: circleci/circleci/node:10.16.3
 
     steps:
-      - checkout:
+      - checkout
 
       - run:
           name: Deploy Master to Heroku
