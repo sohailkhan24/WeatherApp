@@ -1,27 +1,46 @@
-version: 2.1
+# version: 2.1
 
-orbs:
-  heroku: circleci/heroku@0.0.10
+# orbs:
+#   heroku: circleci/heroku@0.0.10
 
+# jobs:
+#   build:
+#     docker:
+#       - image: circleci/node:10.16.3
+#     working_directory: ~/repo
+#     steps:
+#       - checkout
+#       # install dependencies
+#       - run:
+#           name: Install Dependencies
+#           command: npm install
+
+# workflows:
+#   heroku_deploy:
+#     jobs:
+#       - build
+#       - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
+#           requires:
+#             - build
+#           filters:
+#             branches:
+#               only: main
+
+version: 2.1 # use CircleCI 2.0
 jobs:
   build:
-    docker:
-      - image: circleci/node:10.16.3
     working_directory: ~/repo
-    steps:
-      - checkout
-      # install dependencies
-      - run:
-          name: Install Dependencies
-          command: npm install
 
-workflows:
-  heroku_deploy:
-    jobs:
-      - build
-      - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
-          requires:
-            - build
-          filters:
-            branches:
-              only: main
+    docker:
+      - image: circleci/circleci/node:10.16.3
+
+    steps:
+      - checkout:
+
+      - run:
+          name: Deploy Master to Heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/weather-web-app-reactjs.git master
+          auth:
+          username: sohailkhan2709@gmail.com
+          password: zcbm12342@A # context / project UI env-var reference
