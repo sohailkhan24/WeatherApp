@@ -15,7 +15,7 @@ function App() {
     const city = finalData.city;
 
     try {
-      const res = await fetch("http://localhost:9900/weather", {
+      const res = await fetch("https://weatherapp-circleci-backend.herokuapp.com/weather", {
         method: "POST",
         headers: {
           "Content-Type": "application/json;charset=utf-8",
