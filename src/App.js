@@ -15,13 +15,16 @@ function App() {
     const city = finalData.city;
 
     try {
-      const res = await fetch("https://weatherapp-circleci-backend.herokuapp.com/weather", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json;charset=utf-8",
-        },
-        body: JSON.stringify({ city }),
-      });
+      const res = await fetch(
+        "https://weatherapp-circleci-backend.herokuapp.com/weather",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json;charset=utf-8",
+          },
+          body: JSON.stringify({ city }),
+        }
+      );
       const data = await res.json();
       console.log(data.city + "Hello");
       setData(data);
