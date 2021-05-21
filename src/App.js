@@ -26,7 +26,7 @@ function App() {
         }
       );
       const data = await res.json();
-      console.log(data.city + "Hello");
+
       setData(data);
     } catch (e) {
       return e;
