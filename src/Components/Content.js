@@ -4,7 +4,7 @@ import { Table, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Content = ({ data }) => {
-  console.log(data);
+  // console.log(data);
   return (
     // <div className="Container">
     <div className="row">
