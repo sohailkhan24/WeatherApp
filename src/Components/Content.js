@@ -34,7 +34,7 @@ const Content = ({ data }) => {
             </tr>
             <tr>
               <td>5.</td>
-              <td>Name</td>
+              <td>City Name</td>
               <td>{data.city}</td>
             </tr>
           </tbody>
