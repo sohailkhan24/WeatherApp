@@ -24,13 +24,13 @@ const Content = ({ data }) => {
             </tr>
             <tr>
               <td>2.</td>
-              <td>LON</td>
-              <td>{data.longitude}</td>
+              <td>LONGITUDE</td>
+              <td>{data.longitude}\u00B0</td>
             </tr>
             <tr>
               <td>3.</td>
-              <td>LAT</td>
-              <td>{data.latitude}</td>
+              <td>LATITUDE</td>
+              <td>{data.latitude}\u00B0</td>
             </tr>
             <tr>
               <td>5.</td>
