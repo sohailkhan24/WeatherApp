@@ -1,14 +1,13 @@
 import React from "react";
-
+import "./Content.css";
 import { Table } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Content = ({ data }) => {
   return (
-    // <div className="Container">
     <div className="row">
-      <div className="col-md-6 m-4">
-        <Table striped bordered hover variant="success">
+      <div className="out">
+        <Table striped transparent hover className="table">
           <thead>
             <tr>
               <th>#</th>
@@ -41,7 +40,6 @@ const Content = ({ data }) => {
         </Table>
       </div>
     </div>
-    // </div>
   );
 };
 

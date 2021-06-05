@@ -1,7 +1,8 @@
 import Header from "./Components/Header";
-import { Container, Button } from "react-bootstrap";
+import { Container, Button, Row, Col, Jumbotron } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Content from "./Components/Content";
+
 import { useState } from "react";
 
 function App() {
@@ -37,11 +38,18 @@ function App() {
     <div className="App ">
       <Header />
       <Container>
-        <h1 className="m-3 text-light">Welcome !</h1>
-        <Button className="m-3 ms-4 bg-info text-dark" onClick={getData}>
-          Get Weather
-        </Button>
-        <Content data={weatherData} />
+        <h1 className="m-3 text-dark">
+          Welcome ! Get Weather Updates For Your City.
+        </h1>
+        <Jumbotron>
+          <div className="button">
+            <Button className="ml-5  bg-info text-dark" onClick={getData}>
+              Get Hometown Weather
+            </Button>
+          </div>
+
+          <Content data={weatherData} />
+        </Jumbotron>
       </Container>
     </div>
   );
