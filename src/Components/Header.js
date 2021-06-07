@@ -3,14 +3,23 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Header = ({ title }) => {
   return (
-    <Navbar sticky="top" bg="transparent" variant="light" expand="lg">
-      <Navbar.Brand className="h1 m-3" href="#">
+    <Navbar
+      variant="light"
+      expand="lg"
+      style={{ backgroundColor: "#1409096e" }}
+    >
+      <Navbar.Brand className="h5 m-3 text-light" href="#">
         Weather
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll">
         <Nav className="ms-5 m-3 " style={{ maxHeight: "100px" }} navbarScroll>
-          {/* <Nav.Link href="#">Weather Data</Nav.Link> */}
+          <Nav.Link className="h6 mt-2  text-light" href="#">
+            DB Data
+          </Nav.Link>
+          <Nav.Link className="h6 mt-2  text-light" href="#">
+            Weather Data
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
@@ -22,15 +31,3 @@ Header.defaultProps = {
 };
 
 export default Header;
-
-// const Header = (props) => {
-//     return (
-//       <header>
-//         <h1>{props.title}</h1>
-//       </header>
-//     );
-//   };
-
-// {
-/* <Header title='Hello'/> */
-// }

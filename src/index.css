@@ -16,24 +16,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-.jumbotron {
-  background-image: url("https://wallpaperaccess.com/full/1970392.jpg");
-  opacity: 0.9;
-  background-repeat: no-repeat, repeat;
-  background-position: center;
-  background-size: cover;
-  align-content: center;
-  width: 500px;
-  height: 600px;
-  padding: 50px;
-  margin: 60px;
-  margin-left: 450px;
-  font-weight: bold;
-  padding-top: 50px;
-  border-radius: 50px;
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-}
-.button {
-  margin-left: 100px;
-}

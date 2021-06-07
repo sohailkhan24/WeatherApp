@@ -1,0 +1,15 @@
+.table {
+  width: 100%;
+}
+.out {
+  background-color: rgb(166 180 116 / 61%);
+  width: 90%;
+  height: 70%;
+  padding: 10%;
+  margin-top: 12%;
+  margin-left: 6%;
+  font-weight: bold;
+  padding-top: 12%;
+  border-radius: 5%;
+  box-shadow: 10px 10px 5px 0px rgba(48, 66, 104, 0.75);
+}
