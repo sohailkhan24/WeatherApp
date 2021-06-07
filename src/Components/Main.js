@@ -1,8 +1,8 @@
-import Header from "./Header";
-import { Container, Button, Row, Col, Jumbotron } from "react-bootstrap";
+import Header from "./Header/Header";
+import { Container, Button, Jumbotron } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Styles/Main.css";
-import Content from "./Content";
+import Content from "./Page Content/Content";
 
 import { useState } from "react";
 
